@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/andela-ymakanjuola/hackshub-api-gateway/issues"
   },
-  "homepage": "https://github.com/andela-ymakanjuola/hackshub-api-gateway"
+  "homepage": "https://github.com/andela-ymakanjuola/hackshub-api-gateway",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
 }
