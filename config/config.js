@@ -1,18 +1,35 @@
 module.exports = {
   route: {
     development: {
+      users: {
+        url: 'http://localhost:5555'
+      },
+
+      notification: {
+        url: 'http://localhost:3000'
+      }
       
-      url: ''
     },
     test: {
+      users: {
+        url: 'http://localhost:5555'
+      },
 
-      url: ''
+      notification: {
+        url: 'http://localhost:3000'
+      }
     },
     production: {
-      url: ''
+      users: {
+        url: ''
+      },
+
+      notification: {
+        url: ''
+      }
     }
   },
 
-  port: process.env.PORT || 5555
+  port: process.env.PORT || 5000
 
 };
