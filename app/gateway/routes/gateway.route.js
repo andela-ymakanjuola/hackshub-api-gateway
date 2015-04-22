@@ -8,24 +8,26 @@ var express = require('express'),
 //Gateway routes to users service
 router.route('/signup')
 
-  .post(parseUrlencoded, Gateway.create);
+  .post(parseUrlencoded, Gateway.createUser);
 
 router.route('/login')
 
-  .post(Gateway.login)
+  .post(Gateway.login);
 
 
 //Gateway routes to notifications api
 router.route('api/vi/:username/notifications')
 
-  .get(Gateway.readAll);
+  .post(parseUrlencoded, Gateway.createNotification)
+
+  .get(Gateway.readAllNotifications);
 
 router.route('/api/v1/:username/notifications/:notifications')
 
-  .get(Gateway.read)
+  .get(Gateway.readNotification)
 
-  .put(parseUrlencoded, Gateway.update)
+  .put(parseUrlencoded, Gateway.updateNotification)
 
-  .delete(Gateway.delete);
+  .delete(Gateway.deleteNotification);
 
 module.exports = router;
