@@ -22,7 +22,7 @@ router.route('/api/v1/:username/notifications')
 
   .get(Gateway.readAllNotifications);
 
-router.route('/api/v1/:username/notifications/:notifications_id')
+router.route('/api/v1/:username/notifications/:notification_id')
 
   .get(Gateway.readNotification)
 
