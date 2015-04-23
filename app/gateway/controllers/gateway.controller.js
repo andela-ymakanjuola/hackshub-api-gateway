@@ -43,13 +43,13 @@ module.exports = {
   createNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + req.params.username +"/notifications",function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].notification.url + req.params.username +"/notifications",function (error, httpResponse, body) {
         if (error) {
-          response
+          res
             .json(error);
         }
         else {
-          response
+          res
             .json(JSON.parse(body));
         }
       })
@@ -60,7 +60,7 @@ module.exports = {
   readNotification: function(req, res) {
 
     request
-      .get(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
+      .get(config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
             res
               .json(error);
@@ -76,13 +76,14 @@ module.exports = {
   readAllNotifications: function(req, res) {
 
     request
-      .get(config.route[process.env.NODE_ENV].url + "/notifications", function (error, httpResponse, body) {
+      .get(config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications", function (error, httpResponse, body) {
+
          if (error) {
-            response
+            res
               .json(error);
           }
           else {
-            response
+            res
               .json(JSON.parse(body));
           }
       });
@@ -92,13 +93,13 @@ module.exports = {
   updateNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
-            response
+            res
               .json(error);
           }
           else {
-            response
+            res
               .json(JSON.parse(body));
           }
       });
@@ -108,13 +109,13 @@ module.exports = {
   deleteNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
-            response
+            res
               .json(error);
           }
           else {
-            response
+            res
               .json(JSON.parse(body));
           }
       });
