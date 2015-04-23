@@ -76,9 +76,13 @@ module.exports = {
   readAllNotifications: function(req, res) {
 
     request
-      .get(config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications", function (error, httpResponse, body) {
-
-         if (error) {
+      .get({
+        url: config.route[process.env.NODE_ENV].notification.url + req.params.username + "/notifications", 
+        qs: req.query
+      }, 
+        function (error, httpResponse, body) {
+          
+          if (error) {
             res
               .json(error);
           }
