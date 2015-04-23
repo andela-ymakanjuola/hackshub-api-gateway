@@ -2,21 +2,21 @@ module.exports = {
   route: {
     development: {
       users: {
-        url: 'http://localhost:5555'
+        url: 'http://localhost:5555/'
       },
 
       notification: {
-        url: 'http://localhost:3000'
+        url: 'http://localhost:3000/'
       }
       
     },
     test: {
       users: {
-        url: 'http://localhost:5555'
+        url: 'http://localhost:5555/'
       },
 
       notification: {
-        url: 'http://localhost:3000'
+        url: 'http://localhost:3000/'
       }
     },
     production: {
