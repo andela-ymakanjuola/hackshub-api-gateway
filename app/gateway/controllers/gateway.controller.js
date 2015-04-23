@@ -6,7 +6,7 @@ module.exports = {
   login: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].users.url + "/login", function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].users.url + "login", function (error, httpResponse, body) {
         if (error) {
           res
             .json(error);
@@ -25,7 +25,7 @@ module.exports = {
   createUser: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].users.url + "/signup", function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].users.url + "signup", function (error, httpResponse, body) {
         if (error) {
           res
             .json(error);
@@ -43,7 +43,7 @@ module.exports = {
   createNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + "/notifications",function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].url + req.params.username +"/notifications",function (error, httpResponse, body) {
         if (error) {
           response
             .json(error);
@@ -60,7 +60,7 @@ module.exports = {
   readNotification: function(req, res) {
 
     request
-      .get(config.route[process.env.NODE_ENV].url + "/notifications/:notification_id", function (error, httpResponse, body) {
+      .get(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
             res
               .json(error);
@@ -92,7 +92,7 @@ module.exports = {
   updateNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + "/notifications/:notification_id", function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
             response
               .json(error);
@@ -108,7 +108,7 @@ module.exports = {
   deleteNotification: function(req, res) {
 
     request
-      .post(config.route[process.env.NODE_ENV].url + "/notifications/:notification_id", function (error, httpResponse, body) {
+      .post(config.route[process.env.NODE_ENV].url + req.params.username + "/notifications/" + req.params.notification_id, function (error, httpResponse, body) {
          if (error) {
             response
               .json(error);
