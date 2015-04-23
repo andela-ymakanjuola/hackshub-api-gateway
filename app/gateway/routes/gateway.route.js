@@ -16,7 +16,7 @@ router.route('/login')
 
 
 //Gateway routes to notifications api
-router.route('api/vi/:username/notifications')
+router.route('api/v1/:username/notifications')
 
   .post(parseUrlencoded, Gateway.createNotification)
 
