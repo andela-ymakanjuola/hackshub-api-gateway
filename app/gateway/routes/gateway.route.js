@@ -19,9 +19,9 @@ router.route('/login')
 //Gateway routes to notifications api
 router.route('/api/v1/:username/notifications')
 
-  .post(parseUrlencoded,auth, Gateway.createNotification)
+  .post(parseUrlencoded, Gateway.createNotification)
 
-  .get(auth,Gateway.readAllNotifications);
+  .get(Gateway.readAllNotifications);
 
 router.route('/api/v1/:username/delete')
 
@@ -29,10 +29,10 @@ router.route('/api/v1/:username/delete')
 
 router.route('/api/v1/:username/notifications/:notification_id')
 
-  .get(auth, Gateway.readNotification)
+  .get(Gateway.readNotification)
 
   .put(parseUrlencoded, Gateway.updateNotification)
 
-  .delete(auth, Gateway.deleteNotification);
+  .delete(Gateway.deleteNotification);
 
 module.exports = router;
