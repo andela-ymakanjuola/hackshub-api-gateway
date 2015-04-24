@@ -21,11 +21,11 @@ module.exports = {
     },
     production: {
       users: {
-        url: ''
+        url: 'https://hackshub-user-service.herokuapp.com/'
       },
 
       notification: {
-        url: ''
+        url: 'https://notification-email-api.herokuapp.com/'
       }
     }
   },
