@@ -40,6 +40,27 @@ module.exports = {
 
   },
 
+  deleteUser: function (req, res) {
+    
+    request
+      .del({
+        url: config.route[process.env.NODE_ENV].users.url+ "users/" + req.params.username,
+        headers: req.headers
+      },
+        function (error, httpResponse, body) {
+          if (error) {
+            res
+              .json(error);
+          }
+          else {
+            res
+              .json(JSON.parse(body));
+          }
+      });
+
+  },
+
+
   createNotification: function(req, res) {
 
     request
